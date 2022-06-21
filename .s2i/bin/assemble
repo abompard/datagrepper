@@ -17,3 +17,6 @@ poetry install --no-dev --extras deploy --extras schemas
 
 # set permissions for any installed artifacts
 fix-permissions /opt/app-root -P
+
+cd /opt/app-root/lib64/python3.9/site-packages/
+patch -p2 < /opt/app-root/src/.s2i/datanommer.patch
